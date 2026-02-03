@@ -1,1 +1,4 @@
-spring.application.name=produdoro
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://joaovithx:12486795biju@wakanda.ocjunmt.mongodb.net/?appName=wakanda

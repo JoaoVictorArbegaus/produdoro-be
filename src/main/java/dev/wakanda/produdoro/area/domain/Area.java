@@ -1,4 +1,4 @@
-package dev.wakanda.produdoro.projeto.domain;
+package dev.wakanda.produdoro.area.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -11,14 +11,12 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-@Document(collection = "Projeto")
-public class Projeto {
+@Document(collection = "Area")
+public class Area {
     @Id
-    private UUID idProjeto;
+    private UUID idArea;
     private String nome;
     private String descricao;
     @Indexed
     private UUID idUsuario;
-    @Indexed
-    private UUID idArea;
 }

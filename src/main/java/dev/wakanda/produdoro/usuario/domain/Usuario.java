@@ -1,5 +1,7 @@
 package dev.wakanda.produdoro.usuario.domain;
 
+import dev.wakanda.produdoro.pomodoro.domain.ConfiguracaoPadrao;
+import dev.wakanda.produdoro.usuario.application.api.UsuarioNovoRequest;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -18,7 +20,7 @@ public class Usuario {
     @Id
     private UUID idUsuario;
     @Email
-    @Indexed
+    @Indexed(unique = true)
     private String email;
     private ConfiguracaoUsuario configuracao;
     @Builder.Default
@@ -26,5 +28,10 @@ public class Usuario {
     @Builder.Default
     private Integer quantidadePomodoroPausaCurta = 0;
 
-
+    public Usuario(UsuarioNovoRequest usuarioNovo, ConfiguracaoPadrao configuracaoPadrao) {
+        this.idUsuario = UUID.randomUUID();
+        this.email = usuarioNovo.getEmail();
+        this.status = StatusUsuario.FOCO;
+        this.configuracao = new ConfiguracaoUsuario(configuracaoPadrao);
+    }
 }

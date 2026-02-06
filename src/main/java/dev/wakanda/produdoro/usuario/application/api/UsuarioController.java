@@ -3,9 +3,11 @@ package dev.wakanda.produdoro.usuario.application.api;
 import dev.wakanda.produdoro.usuario.application.service.UsuarioApplicationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Validated
 @Log4j2
 @RequiredArgsConstructor
 public class UsuarioController implements UsuarioApi {

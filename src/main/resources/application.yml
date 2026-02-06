@@ -6,3 +6,7 @@ spring:
   mongodb:
     uri: mongodb+srv://joaovithx:12486795biju@wakanda.ocjunmt.mongodb.net/wakanda?retryWrites=true&w=majority
     auto-index-creation: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger
